@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Dusape - Product Leader & Founder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Simple script to add 'in-view' class to elements when they scroll into view
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a192f; /* Dark Navy Blue Background */
+            color: #ccd6f6; /* Light text */
+            scroll-behavior: smooth;
+        }
+        .accent-text {
+            color: #64ffda; /* Vibrant Teal/Green Accent */
+        }
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #64ffda;
+        }
+        .highlight-link {
+            display: inline-block;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .highlight-link:hover {
+             color: #64ffda;
+        }
+        .highlight-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #64ffda;
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        .highlight-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .project-card {
+            background-color: #112240; /* Slightly Lighter Navy */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -15px rgba(2,12,27,0.7);
+        }
+        .tag {
+            background-color: #172a45;
+            color: #8892b0;
+        }
+        /* Fade-in animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Timeline styles */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 8px;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #0a192f;
+            border: 3px solid #64ffda;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="fixed w-full bg-slate-900 bg-opacity-80 backdrop-blur-sm z-50 shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="font-bold text-xl accent-text">BD</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#about" class="nav-link text-gray-300 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#experience" class="nav-link text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#projects" class="nav-link text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#ventures" class="nav-link text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Ventures</a>
+                        <a href="#campaign-offer" class="nav-link text-gray-300 px-3 py-2 rounded-md text-sm font-medium accent-text border border-accent-text hover:bg-accent-text hover:bg-opacity-10">LinkedIn Offer</a>
+                        <a href="#contact" class="nav-link text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-16">
+        <section id="hero" class="py-32 md:py-48">
+            <div class="max-w-4xl mx-auto text-left px-4">
+                <p class="text-lg accent-text mb-4">Hi, my name is</p>
+                <h1 class="text-4xl md:text-7xl font-bold tracking-tight text-slate-200">
+                    Brian Dusape.
+                </h1>
+                <h2 class="text-4xl md:text-7xl font-bold tracking-tight text-slate-400 mt-2">
+                    I build products that users love.
+                </h2>
+                <p class="mt-6 text-lg text-slate-400 max-w-xl">
+                    I'm a product leader with a passion for solving real world problems and turning complex challenges into pleasant digital experiences.
+                </p>
+                <div class="mt-12">
+                    <a href="#projects" class="accent-text border border-accent-text font-semibold py-3 px-8 rounded-md hover:bg-accent-text hover:bg-opacity-10 transition-colors">
+                        Check out my work!
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-5 gap-16 items-center">
+                <div class="md:col-span-3">
+                    <h2 class="text-3xl font-bold text-slate-200 mb-6 flex items-center">
+                        <span class="accent-text mr-3">01.</span> About Me
+                    </h2>
+                    <div class="space-y-4 text-slate-400">
+                        <p>
+                            Hello! I'm Brian, a product manager with a passion for solving real-world problems through technology. My journey into product began with a fascination for how great user experiences can transform complex systems into something intuitive and delightful.
+                        </p>
+                        <p>
+                            With a Master's in Information Systems from Drexel University, I've had the privilege of working with great teams at <a href="#experience" class="accent-text font-semibold highlight-link">Valley Bank</a> and <a href="#experience" class="accent-text font-semibold highlight-link">AmeriSave Mortgage</a>, where I've led the development of successful financial products and streamlined processes to enhance customer engagement.
+                        </p>
+                        <p>
+                            My time in fintech revealed a critical insight: the most powerful leverage comes from automating inefficient workflows. This led me to found Luntra Labs, an early-stage venture focused on building AI-powered tools for overlooked operators. It's the next step in my journey to solve meaningful problems with technology.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <div class="p-1 bg-gradient-to-tr from-accent-text to-slate-600 rounded-lg shadow-2xl">
+                         <img class="rounded-lg mx-auto" src="https://i.imgur.com/sZq6E00.jpeg" alt="A professional headshot of Brian Dusape">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-24 fade-in-section">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-slate-200 mb-12 flex items-center">
+                    <span class="accent-text mr-3">02.</span> Where I've Worked
+                </h2>
+                <div class="relative border-l-2 border-slate-700 pl-8 space-y-12">
+                    <div class="timeline-item">
+                        <h3 class="text-xl font-semibold text-slate-200">AVP of Digital Banking / Associate PM @ <span class="accent-text">Valley Bank</span></h3>
+                        <p class="text-sm text-slate-500 mt-1">Oct 2022 - Feb 2023</p>
+                        <ul class="mt-4 space-y-2 text-slate-400 list-disc list-inside">
+                            <li>Led the development of one of Valley's most successful CDs, contributing to a significant increase in sales.</li>
+                            <li>Successfully updated the entire digital product catalog for clarity and user experience.</li>
+                            <li>Designed and spearheaded the 'Refer-a-Friend' program to boost organic customer acquisition.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="text-xl font-semibold text-slate-200">Product Manager Intern @ <span class="accent-text">Amerisave Mortgage</span></h3>
+                        <p class="text-sm text-slate-500 mt-1">Jun 2022 - Sep 2022</p>
+                        <ul class="mt-4 space-y-2 text-slate-400 list-disc list-inside">
+                            <li>Created and introduced a new line of business with the Personal Loan service.</li>
+                            <li>Developed and implemented the user interface, improving user experience and increasing customer engagement.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-slate-200 mb-12 flex items-center">
+                    <span class="accent-text mr-3">03.</span> Things I've Built
+                </h2>
+                <div class="space-y-20">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <p class="accent-text mb-2">Featured Project</p>
+                            <h3 class="text-2xl font-bold text-slate-200 mb-4">Valley Bank Refer-a-Friend Program</h3>
+                            <div class="project-card shadow-lg p-6 rounded-md">
+                                <p class="text-slate-400">A strategic initiative to boost customer acquisition by 20%. The project involved deep competitive analysis, user journey mapping, and designing a simplified, rewarding experience for both referrers and new customers.</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2 my-4 text-sm">
+                                <span class="tag font-mono px-2.5 py-1 rounded-full">Product Strategy</span>
+                                <span class="tag font-mono px-2.5 py-1 rounded-full">UX Research</span>
+                                <span class="tag font-mono px-2.5 py-1 rounded-full">Fintech</span>
+                            </div>
+                        </div>
+                        <div class="project-card rounded-lg overflow-hidden row-start-1 md:row-start-auto">
+                            <img class="w-full object-cover" src="https://i.imgur.com/bhNeouT.png" alt="Refer-a-Friend Program UI Mockup">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="md:order-2">
+                            <p class="accent-text mb-2">Featured Project</p>
+                            <h3 class="text-2xl font-bold text-slate-200 mb-4">Amerisave Personal Loan Service</h3>
+                            <div class="project-card shadow-lg p-6 rounded-md">
+                                <p class="text-slate-400">Launched a completely new line of business by creating the Personal Loan service from the ground up. I was responsible for the end-to-end product development, including designing and implementing a user-friendly interface that significantly increased customer engagement.</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2 my-4 text-sm">
+                                <span class="tag font-mono px-2.5 py-1 rounded-full">Product Launch</span>
+                                <span class="tag font-mono px-2.5 py-1 rounded-full">UI/UX Design</span>
+                                <span class="tag font-mono px-2.5 py-1 rounded-full">0-to-1</span>
+                            </div>
+                        </div>
+                        <div class="project-card rounded-lg overflow-hidden">
+                             <img class="w-full object-cover" src="https://i.imgur.com/QSoqPfw.png" alt="Personal Loan Application Interface">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ventures" class="py-24 fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-slate-200 mb-12 flex items-center">
+                    <span class="accent-text mr-3">04.</span> My Latest Venture
+                </h2>
+                <div class="space-y-20">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <p class="accent-text mb-2">Founder & Builder</p>
+                            <h3 class="text-2xl font-bold text-slate-200 mb-4">Luntra Labs - Your AI Chief of Staff</h3>
+                            <div class="project-card shadow-lg p-6 rounded-md">
+                                <p class="text-slate-400">Luntra is an AI-powered platform I'm building to help solo operators, consultants, and freelancers automate their administrative work and reclaim their focus. From synthesizing research to drafting follow-ups, Luntra acts as a force multiplier for small teams.</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2 my-4 text-sm">
+                                <span class="tag font-mono px-2.5 py-1 rounded-full">AI</span>
+                                <span class="tag font-mono px-2.5 py-1 rounded-full">Workflow Automation</span>
+                                <span class="tag font-mono px-2.5 py-1 rounded-full">Founder</span>
+                                <span class="tag font-mono px-2.5 py-1 rounded-full">Product Development</span>
+                            </div>
+                             <a href="https://luntra.one" target="_blank" rel="noopener noreferrer" class="accent-text border border-accent-text font-semibold py-2 px-6 rounded-md hover:bg-accent-text hover:bg-opacity-10 transition-colors">
+                                 View the Project
+                             </a>
+                        </div>
+                        <div class="project-card rounded-lg overflow-hidden row-start-1 md:row-start-auto">
+                            <img class="w-full object-cover" src="https://placehold.co/600x400/0a192f/64ffda?text=Luntra+Labs+Homepage" alt="Screenshot of the Luntra Labs website">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="campaign-offer" class="py-24 fade-in-section">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <p class="font-mono accent-text">The Wild Web Design Co. Presents</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-200 mt-3">
+                        Stop Looking Like a Hobby. Start Closing Deals.
+                    </h2>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg text-slate-400">
+                        You're an expert at what you do. But building a website that makes you look legit? That's a whole other job. This no-fluff package is for the scrappy solo operator who's ready to look professional—fast.
+                    </p>
+                    <div class="mt-8">
+                        <a href="#package-details" class="accent-text border border-accent-text font-semibold py-3 px-8 rounded-md hover:bg-accent-text hover:bg-opacity-10 transition-colors">
+                            See The Package
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-20 border-t border-slate-700 pt-12">
+                    <h3 class="text-2xl font-semibold text-center text-slate-300 mb-10">Built for the Independent Operator</h3>
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div class="bg-slate-800/50 p-6 rounded-lg">
+                            <div class="accent-text inline-block p-3 bg-slate-900 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                            </div>
+                            <h4 class="mt-4 font-bold text-xl text-slate-200">The Early-Stage Founder</h4>
+                            <p class="mt-2 text-slate-400">You need a sharp landing page for your MVP to start gathering leads and looking credible for investors.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg">
+                            <div class="accent-text inline-block p-3 bg-slate-900 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            </div>
+                            <h4 class="mt-4 font-bold text-xl text-slate-200">The Expert Consultant</h4>
+                            <p class="mt-2 text-slate-400">Your expertise is top-tier, but your web presence isn't. It's time for a site that reflects your authority.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg">
+                            <div class="accent-text inline-block p-3 bg-slate-900 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                            </div>
+                            <h4 class="mt-4 font-bold text-xl text-slate-200">The Skilled Freelancer</h4>
+                            <p class="mt-2 text-slate-400">Move beyond platform profiles with a personal site that showcases your best work and attracts premium clients.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="package-details" class="mt-24">
+                     <h3 class="text-3xl font-bold text-slate-200 text-center mb-12">
+                         The <span class="accent-text">$999 Legit Kit</span>: Everything You Need & Nothing You Don't.
+                     </h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="project-card p-6 rounded-md flex items-start space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 accent-text flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3" /></svg>
+                            <div>
+                                <h4 class="font-semibold text-slate-200">Blazing-Fast Landing Page</h4>
+                                <p class="text-slate-400 text-sm">A professional, single-page site built for speed and conversions.</p>
+                            </div>
+                        </div>
+                        <div class="project-card p-6 rounded-md flex items-start space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 accent-text flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 01.293.707V8z" /></svg>
+                            <div>
+                                <h4 class="font-semibold text-slate-200">Crystal-Clear Messaging</h4>
+                                <p class="text-slate-400 text-sm">We'll work together to nail your headline and value proposition.</p>
+                            </div>
+                        </div>
+                        <div class="project-card p-6 rounded-md flex items-start space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 accent-text flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                            <div>
+                                <h4 class="font-semibold text-slate-200">Fully Responsive Design</h4>
+                                <p class="text-slate-400 text-sm">Looks incredible on desktops, tablets, and mobile phones.</p>
+                            </div>
+                        </div>
+                        <div class="project-card p-6 rounded-md flex items-start space-x-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 accent-text flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            <div>
+                                <h4 class="font-semibold text-slate-200">Contact & Inquiry Form</h4>
+                                <p class="text-slate-400 text-sm">Make it easy for potential clients to reach out and get quotes.</p>
+                            </div>
+                        </div>
+                        <div class="project-card p-6 rounded-md flex items-start space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 accent-text flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <div>
+                                <h4 class="font-semibold text-slate-200">Domain & Hosting Setup</h4>
+                                <p class="text-slate-400 text-sm">I'll guide you through setting up a custom domain and hosting.</p>
+                            </div>
+                        </div>
+                        <div class="project-card p-6 rounded-md flex items-start space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 accent-text flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <div>
+                                <h4 class="font-semibold text-slate-200">Fast 1-Week Turnaround</h4>
+                                <p class="text-slate-400 text-sm">From our kickoff call to your live site in just seven days.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="booking-cta" class="mt-24 bg-[#112240] rounded-lg p-8 md:p-12 text-center shadow-2xl transition-transform hover:transform hover:-translate-y-2">
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-200">Ready to Go Pro?</h3>
+                    <p class="mt-4 text-slate-400 max-w-xl mx-auto text-lg">
+                        Spots are limited to ensure a fast turnaround and personal focus. Book now to secure your project and get your new site live in as little as one week.
+                    </p>
+                    <div class="mt-8">
+                         <a href="mailto:bdusape@gmail.com?subject=Inquiry%20from%20LinkedIn%20Ad%20-%20$999%20Legit%20Kit" class="inline-block text-lg accent-text border-2 border-accent-text font-bold py-4 px-10 rounded-md hover:bg-accent-text hover:bg-opacity-10 transition-all duration-300 transform hover:scale-105">
+                             Claim Your Spot Now &rarr;
+                         </a>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-4">One-time payment. No hidden fees. No BS.</p>
+                </div>
+
+                <div class="mt-24 border-t border-slate-700 pt-16 text-center">
+                    <h3 class="text-3xl font-bold text-slate-200">Need Something More?</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
+                        If your needs go beyond a single-page site—such as multi-page layouts, e-commerce functionality, or advanced integrations—I can help with that, too. Let's discuss your project to create a custom solution tailored to your specific goals.
+                    </p>
+                    <div class="mt-8">
+                        <a href="mailto:bdusape@gmail.com?subject=Inquiry%20for%20Custom%20Work" class="accent-text border border-accent-text font-semibold py-3 px-8 rounded-md hover:bg-accent-text hover:bg-opacity-10 transition-colors">
+                            Get a Custom Quote
+                        </a>
+                    </div>
+                </div>
+                </div>
+        </section>
+        <section id="contact" class="py-32 text-center fade-in-section">
+            <div class="max-w-xl mx-auto px-4">
+                <h2 class="text-2xl font-bold text-slate-200"><span class="accent-text mr-2">05.</span> What's Next?</h2>
+                <h3 class="text-5xl font-bold text-slate-200 mt-4">Get In Touch</h3>
+                <p class="mt-6 text-slate-400">
+                    I'm always excited to discuss new opportunities, share ideas, or talk about the future of product. Whether you have a question or just want to say hi, my inbox is always open.
+                </p>
+                <div class="mt-12">
+                     <a href="mailto:bdusape@gmail.com" class="accent-text border border-accent-text font-semibold py-4 px-8 rounded-md hover:bg-accent-text hover:bg-opacity-10 transition-colors text-lg">
+                         Say Hello
+                     </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-navy-darker">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+            <p>Designed & Built by Brian Dusape</p>
+            <a href="https://www.linkedin.com/in/briandusape/" target="_blank" rel="noopener noreferrer" class="mt-2 inline-block accent-text">
+                Connect on LinkedIn
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
