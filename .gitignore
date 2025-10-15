@@ -1,0 +1,15 @@
+# Node modules
+node_modules/
+package-lock.json
+
+# Development and testing files
+screenshot-ventures.js
+*-screenshot.png
+*-updated.png
+*-final.png
+fullpage-*.png
+
+# Editor and system files
+.DS_Store
+.vscode/
+*.log
